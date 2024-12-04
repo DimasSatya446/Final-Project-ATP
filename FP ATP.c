@@ -59,3 +59,15 @@ void removeSong(const char *title) {
 }
 
 //Tampilkan lagu dalam playlist
+void displayPlaylist() {
+    if (head == NULL) {
+        printf("Playlist kosong.\n");
+        return;
+    }
+    Song *temp = head;
+    printf("Daftar Lagu:\n");
+    while (temp != NULL) {
+        printf("- %s oleh %s\n", temp->title, temp->singer);
+        temp = temp->next;
+    }
+}
